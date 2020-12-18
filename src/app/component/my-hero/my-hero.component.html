@@ -1,0 +1,15 @@
+<div class="fast fadeIn">
+  <h2 class="display-4 pb-4">Heroes DC y MARVEL Activos</h2>
+
+  <div class="card-columns mb-5 mx-3 pb-3">
+    <div class="card animated fadeIn" *ngFor="let Hero of ArrayHeroes; let i = index">
+      <img class="card-img-top" src="../../../{{ Hero.img }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ Hero.nombre }}</h5>
+        <p class="card-text">{{ Hero.bio.substring(0,30) }} ...</p>
+        <small>{{ Hero.aparicion }}</small>
+      </div>
+      <button  (click)="Navegar(i)" class="btn btn-outline-success btn-block">Ver mas...</button>
+    </div>
+  </div>
+</div>

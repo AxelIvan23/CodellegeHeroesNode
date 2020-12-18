@@ -1,0 +1,18 @@
+<div class="fast fadeIn">
+  <h2 class="display-4 pb-4">Resultados de busqueda: </h2>
+  <div *ngIf="!(Resultados.length>0)">
+    <h2>Vaya... no se encontro resultados</h2>
+    <img src="../../assets/img/empty.gif">
+  </div>
+  <div class="card-columns" *ngIf="Resultados.length>0">
+    <div class="card animated fadeIn" *ngFor="let Resultados of Resultados; let i = index">
+      <img class="card-img-top" src="../../../{{ Resultados.img }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ Resultados.nombre }}</h5>
+        <p class="card-text">{{ Resultados.bio.substring(0,30) }} ...</p>
+        <small>{{ Resultados.aparicion }}</small>
+      </div>
+      <button  (click)="Navegar(i)" class="btn btn-outline-success btn-block">Ver mas...</button>
+    </div>
+  </div>
+</div>
